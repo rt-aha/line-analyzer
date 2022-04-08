@@ -1,0 +1,30 @@
+* {
+  font-family: Microsoft JhengHei, 微軟正黑體, 'PingFang TC', Microsoft JhengHei, Arial, Helvetica, sans-serif;
+}
+
+
+.clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+button {
+  // background-color: transparent;
+  border: 0px transparent;
+  outline: 0px transparent;
+  cursor: pointer;
+}
+
+input {
+  background-color: transparent;
+  border: 0px transparent;
+  outline: 0px transparent;
+  box-sizing: border-box;
+
+  &:disabled {
+    background-color: transparent;
+  }
+}

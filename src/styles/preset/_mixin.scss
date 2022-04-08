@@ -1,0 +1,72 @@
+// rwd
+// 三個變數依序為 rwd斷點名稱，rwd斷點寬度，內部容器寬度
+// 如需增加斷點，在 $rwd_break_point 中添加即可
+$rwd_break_point: (tablet 768px 708px, pc 1440px 1200px);
+// 內部可以是百分比
+// $rwd_break_point: (tablet 768px 90%, pc 1320px 90%);
+
+
+
+// 預設到第一個斷點前，左右留15px
+.g-section {
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.g-content {
+  margin: 0 auto;
+}
+
+@mixin set_content_size($content_size_value) {
+  .g-section {
+    padding: 0;
+  }
+
+  .g-content {
+    width: 100%;
+    max-width: $content_size_value;
+  }
+}
+
+@mixin rwd($break_point_key) {
+  @each $break_point, $break_point_value,
+    $content_size_value in $rwd_break_point
+  {
+    @if $break_point == $break_point_key {
+      @media screen and (min-width: $break_point_value) {
+        @include set_content_size($content_size_value);
+        @content;
+      }
+    }
+  }
+}
+
+@mixin execute_default_css($rwd_break_point) {
+  @each $break_point, $break_point_value,
+    $content_size_value in $rwd_break_point
+  {
+    @include rwd($break_point);
+  }
+}
+
+// 字
+// 參數 顏色, 字體大小, 字體粗細
+@mixin font-style($c, $fs, $fw) {
+  color: $c;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+// 字
+// 參數 顏色, 字體大小, 字體粗細, 字寬
+@mixin font-style-ls($c, $fs, $fw, $ls) {
+  color: $c;
+  font-size: $fs;
+  font-weight: $fw;
+  letter-spacing: $ls;
+}
+
+@mixin box-padding($padding) {
+  box-sizing: border-box;
+  padding: $padding;
+}
