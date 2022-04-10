@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    init
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="ly">
+    <div class="ly__content">
+      <p>使用者1與使用者2聊天紀錄</p>
+      <p>2019/03/02 至 2021/10/13</p>
+
+      <!-- 總訊息數 與 總通話時間 -->
+      <div class="main-data g-section">
+        <div class="main-data__content g-content">
+          <div class="md-box">
+            <div class="md-box__content g-shadow g-content">
+              <div class="md-box__content__text">
+                <p class="g-label">總訊息數</p>
+                <p class="s-text">2319</p>
+              </div>
+
+              <img class="md-box__img" src="https://fakeimg.pl/50x50/ccc" />
+            </div>
+
+          </div>
+          <div class="md-box">
+            <div class="md-box__content g-shadow g-content">
+              <div class="md-box__content__text">
+                <p class="g-label">總通話時間</p>
+                <p class="s-text">23小時19分鐘</p>
+              </div>
+              <img class="md-box__img" src="https://fakeimg.pl/50x50/ccc" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 總訊息（訊息、檔案、圖片...等）統計與個別使用者統計 -->
+      <div class="total-chat-data g-shadow g-section">
+        <div class="total-chat-data__content g-content">
+          <p class="g-label">訊息統計</p>
+          <div class="tcd-all-chart">
+            <div class="tcd-all-chart__content">
+              <div class=tcd-all-chart__content__label>
+              </div>
+              <div class=tcd-all-chart__content__chart>
+                chart
+              </div>
+
+            </div>
+          </div>
+
+
+          <p class="g-label">個別使用者統計</p>
+          <div class="tcd-separate-chart">
+            <div class="tcd-separate-chart__content">
+              <div class="tcd-sc-box">
+                <p class="g-label">user1</p>
+                <div class="tcd-sc-box">chart</div>
+              </div>
+              <div class="tcd-sc-box">
+                <p class="g-label">user2</p>
+                <div class="tcd-sc-box">chart</div>
+              </div>
+              <div class="tcd-sc-box">
+                <p class="g-label">user3</p>
+                <div class="tcd-sc-box">chart</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 平均訊息（訊息、檔案、圖片...等）統計與個別使用者統計 -->
+      <div class="average-chat-data  g-section">
+        <div class="average-chat-data__content g-content">
+          <div class="acd-box">
+            <div class="acd-box__content g-content g-shadow">
+              <p class="g-label">聊天頻率</p>
+            </div>
+          </div>
+
+          <div class="acd-box">
+            <div class="acd-box__content g-content g-shadow">
+              <p class="g-label">每日聊天平均筆數</p>
+            </div>
+          </div>
+          <div class="acd-box">
+            <div class="acd-box__content g-content g-shadow">
+              <p class="g-label">每日訊息數</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 最多/最少訊息時間軸 -->
+      <div class="max-min-message-data g-shadow g-section">
+
+        <div class="max-min-message-data__content g-content">
+
+          <div class="mmmd-box">
+            <p class="g-label">最多訊息的三天</p>
+          </div>
+
+          <div class="mmmd-box">
+            <p class="g-label">最少訊息的三天</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</body>
+
 </html>

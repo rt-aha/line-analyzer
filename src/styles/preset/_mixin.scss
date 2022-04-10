@@ -1,72 +1,130 @@
-// rwd
-// 三個變數依序為 rwd斷點名稱，rwd斷點寬度，內部容器寬度
-// 如需增加斷點，在 $rwd_break_point 中添加即可
-$rwd_break_point: (tablet 768px 708px, pc 1440px 1200px);
-// 內部可以是百分比
-// $rwd_break_point: (tablet 768px 90%, pc 1320px 90%);
-
-
-
-// 預設到第一個斷點前，左右留15px
-.g-section {
-  box-sizing: border-box;
-  padding: 0 15px;
-}
-
-.g-content {
-  margin: 0 auto;
-}
-
-@mixin set_content_size($content_size_value) {
-  .g-section {
-    padding: 0;
-  }
-
-  .g-content {
-    width: 100%;
-    max-width: $content_size_value;
-  }
-}
-
-@mixin rwd($break_point_key) {
-  @each $break_point, $break_point_value,
-    $content_size_value in $rwd_break_point
-  {
-    @if $break_point == $break_point_key {
-      @media screen and (min-width: $break_point_value) {
-        @include set_content_size($content_size_value);
-        @content;
-      }
-    }
-  }
-}
-
-@mixin execute_default_css($rwd_break_point) {
-  @each $break_point, $break_point_value,
-    $content_size_value in $rwd_break_point
-  {
-    @include rwd($break_point);
-  }
-}
-
 // 字
-// 參數 顏色, 字體大小, 字體粗細
-@mixin font-style($c, $fs, $fw) {
-  color: $c;
-  font-size: $fs;
-  font-weight: $fw;
+// 參數 顏色, 字體大小, 字體粗細, 字距
+@mixin fontSizeRem($fs) {
+  font-size: calc($fs / 16) + rem;
 }
 
-// 字
-// 參數 顏色, 字體大小, 字體粗細, 字寬
-@mixin font-style-ls($c, $fs, $fw, $ls) {
+@mixin font-style($c: #000, $fs: 16, $fw: 400, $ls: normal, $lh: normal) {
   color: $c;
-  font-size: $fs;
+  @include fontSizeRem($fs);
+  // font-size: calc($fs / 16) + rem;
   font-weight: $fw;
   letter-spacing: $ls;
+  line-height: $lh;
 }
 
-@mixin box-padding($padding) {
+@mixin max-width($w, $isCenter: true) {
+  width: 95%;
+  max-width: $w + px;
+
+  @if $isCenter == true {
+    margin: 0 auto;
+  }
+}
+
+@mixin font-size($fs: 16) {
+  font-size: calc($fs / 16) + rem;
+}
+
+@mixin padding($padding) {
   box-sizing: border-box;
   padding: $padding;
+}
+
+@mixin flex($js: flex-start, $ai: center, $fd: row) {
+  display: flex;
+  justify-content: $js;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+
+@mixin inline-flex($js: flex-start, $ai: center, $fd: row) {
+  display: inline-flex;
+  justify-content: $js;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+
+@mixin position($type: center, $tb: 0px, $lr: 0px) {
+  @if $type == center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $type == tl {
+    position: absolute;
+    top: $tb;
+    left: $lr;
+  }
+
+  @if $type == tr {
+    position: absolute;
+    top: $tb;
+    right: $lr;
+  }
+
+  @if $type == bl {
+    position: absolute;
+    bottom: $tb;
+    left: $lr;
+  }
+
+  @if $type == br {
+    position: absolute;
+    bottom: $tb;
+    right: $lr;
+  }
+}
+
+@mixin cus-radius($tl, $tr, $br, $bl) {
+  border-top-left-radius: $tl;
+  border-top-right-radius: $tr;
+  border-bottom-right-radius: $br;
+  border-bottom-left-radius: $bl;
+}
+
+// 移除button 所有預設
+@mixin set-btn-default() {
+  border: 0px transparent;
+  outline: 0px transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin circle($wh: 10px, $r: 50%) {
+  width: $wh;
+  height: $wh;
+  border-radius: $r;
+}
+
+// 行數省略
+@mixin word-ellipsis($row: 1) {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+// 行數復原
+@mixin word-ellipsis-unlimited() {
+  overflow: visible;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  -webkit-line-clamp: none;
+  -webkit-box-orient: inline-axis;
+}
+
+@mixin h100() {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+@mixin min-h100() {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }

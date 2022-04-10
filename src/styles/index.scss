@@ -1,0 +1,89 @@
+@import '~@/styles/preset/index.scss';
+@import '~@/styles/preset/mixin';
+@import '~@/styles/shared/global.scss';
+
+.ly {
+  &__content {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+// 總訊息數 與 總通話時間
+.main-data {
+  &__content {
+    @include flex();
+    flex-wrap: wrap;
+    margin: 0 -40px;
+  }
+}
+
+.md-box {
+  flex: 50%;
+  @include padding(0 20px);
+
+  &__content {
+    @include flex(space-between);
+
+    &__img {
+    }
+
+    &__text {
+    }
+  }
+}
+
+// 總訊息（訊息、檔案、圖片...等）統計與個別使用者統計
+.total-chat-data {
+  &__content {
+  }
+}
+
+.tcd-all-chart {
+  &__content {
+    &__label {
+    }
+
+    &__chart {
+    }
+  }
+}
+
+.tcd-separate-chart {
+  &__content {
+    @include flex();
+    flex-wrap: wrap;
+  }
+}
+
+.tcd-sc-box {
+  flex: 50%;
+
+  &__chart {
+  }
+}
+
+// 平均訊息（訊息、檔案、圖片...等）統計與個別使用者統計
+.average-chat-data {
+  &__content {
+    @include flex();
+    flex-wrap: wrap;
+    margin: 0 -40px;
+  }
+}
+
+// 最多/最少訊息時間軸
+.acd-box {
+  flex: 33.333333%;
+  @include padding(0 20px);
+
+  &__content {
+  }
+}
+
+.max-min-message-data {
+  &__content {
+  }
+}
+
+.mmmd-box {
+}

@@ -1,0 +1,26 @@
+// 訊息區塊
+.g-section {
+  margin-top: 20px;
+}
+
+// 陰影
+.g-shadow {
+  box-shadow: 0px 0px 4px rgba($c-black, 0.1);
+}
+
+.g-content {
+  @include padding(20px);
+}
+
+.g-title {
+  @include font-style($c-black, 20, 700, 1px);
+}
+
+.g-sub-title {
+  @include font-style($c-black, 18, 700, 1px);
+}
+
+.g-label {
+  @include font-style(#888, 16, 400, 1px);
+  margin-bottom: 5px;
+}

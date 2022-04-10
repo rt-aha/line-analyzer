@@ -1,0 +1,89 @@
+// rwd
+
+// init
+$init: 320px;
+$init__content: 280px;
+// mobile
+$mobile: 576px;
+$mobile__content: 90%;
+// portrait
+$portrait: 768px;
+// $portrait__content: 568px;
+$portrait__content: 90%;
+// tablet
+$tablet: 1024px;
+// $tablet__content: 768px;
+$tablet__content: 90%;
+// sm-pc
+$sm-pc: 1440px;
+// $sm-pc__content: 1000px;
+$sm-pc__content: 90%;
+// pc
+$pc: 1600px;
+$pc__content: 1366px;
+// extra-pc (*** 僅 header 使用)
+$extra-pc: 1700px;
+$extra-pc__content: 1366px;
+// lg-pc
+$lg-pc: 1920px;
+$lg-pc__content: 1366px;
+
+.d-content {
+  box-sizing: border-box;
+  padding: 0 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $init) {
+  .d-content {
+    margin: 0 auto;
+    padding: 0 30px;
+    display: block;
+    width: 100%;
+    // max-width: $init__content;
+  }
+}
+
+@media screen and (min-width: $mobile) {
+  .d-content {
+    padding: 0;
+    max-width: $mobile__content;
+  }
+}
+
+@media screen and (min-width: $portrait) {
+  .d-content {
+    max-width: $portrait__content;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .d-content {
+    max-width: $tablet__content;
+  }
+}
+
+@media screen and (min-width: $sm-pc) {
+  .d-content {
+    max-width: $sm-pc__content;
+  }
+}
+
+@media screen and (min-width: $pc) {
+  .d-content {
+    max-width: $pc__content;
+  }
+}
+
+@media screen and (min-width: $extra-pc) {
+  .d-content {
+    max-width: $extra-pc__content;
+  }
+}
+
+@media screen and (min-width: $lg-pc) {
+  .d-content {
+    max-width: $lg-pc__content;
+  }
+}
