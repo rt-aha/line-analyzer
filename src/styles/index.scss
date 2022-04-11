@@ -4,16 +4,27 @@
 
 .ly {
   &__content {
-    margin: 0 auto;
+    margin: 50px auto 100px;
     max-width: 960px;
+  }
+}
+
+.main-title {
+  @include font-style($c-main, 24, 700, 1px);
+
+  &__date-range {
+    @include font-style($c-main-light, 18, 700, 1px);
   }
 }
 // 總訊息數 與 總通話時間
 .main-data {
+  // width: 100%;
   &__content {
+    // width: 100%;
     @include flex();
     flex-wrap: wrap;
-    margin: 0 -40px;
+    margin: 0 -20px;
+    // @include padding(0 30px);
   }
 }
 
@@ -67,11 +78,10 @@
   &__content {
     @include flex();
     flex-wrap: wrap;
-    margin: 0 -40px;
+    margin: 0 -20px;
   }
 }
 
-// 最多/最少訊息時間軸
 .acd-box {
   flex: 33.333333%;
   @include padding(0 20px);
@@ -80,10 +90,92 @@
   }
 }
 
+// 最多/最少訊息時間軸
+
 .max-min-message-data {
   &__content {
   }
 }
 
 .mmmd-box {
+}
+
+// 每日訊息圖
+.daily-chat-data {
+  &__content {
+  }
+}
+
+.dcd-all-chart {
+  &__content {
+    &__label {
+    }
+
+    &__chart {
+    }
+  }
+}
+
+// 總通訊統計與個別使用者統計
+.total-phone-data {
+  &__content {
+  }
+}
+
+.tpd-all-chart {
+  &__content {
+    &__label {
+    }
+
+    &__chart {
+    }
+  }
+}
+
+.tpd-separate-chart {
+  &__content {
+    @include flex();
+    flex-wrap: wrap;
+  }
+}
+
+.tpd-sc-box {
+  flex: 50%;
+
+  &__chart {
+  }
+}
+
+// 平均通話頻率等統計與個別使用者統計
+
+.average-phone-data {
+  &__content {
+    @include flex();
+    flex-wrap: wrap;
+    margin: 0 -20px;
+  }
+}
+
+.apd-box {
+  flex: 50%;
+  @include padding(0 20px);
+
+  &__content {
+  }
+}
+
+// 每日通話圖
+.daily-phone-data {
+  &__content {
+  }
+}
+
+.dpd-all-chart {
+  &__content {
+    &__label {
+    }
+
+    &__chart {
+    }
+  }
 }

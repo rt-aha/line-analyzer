@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Line Message Analyzer</title>
 </head>
 
 <body>
-  <div class="ly">
+  <div class="ly" id="ly">
     <div class="ly__content">
-      <p>使用者1與使用者2聊天紀錄</p>
-      <p>2019/03/02 至 2021/10/13</p>
+      <h2 class="main-title">使用者1與使用者2聊天紀錄</h2>
+      <p class="main-title__date-range">2019/03/02 至 2021/10/13</p>
 
       <!-- 總訊息數 與 總通話時間 -->
-      <div class="main-data g-section">
-        <div class="main-data__content g-content">
+      <div class="main-data g-section" x-data="mainData">
+        <div class="main-data__content">
           <div class="md-box">
             <div class="md-box__content g-shadow g-content">
               <div class="md-box__content__text">
                 <p class="g-label">總訊息數</p>
-                <p class="s-text">2319</p>
+                <p class="s-text" x-text="totalMessage">2319</p>
               </div>
+              <img class="md-box__img" src="../assets/icons/message.svg" />
 
-              <img class="md-box__img" src="https://fakeimg.pl/50x50/ccc" />
             </div>
 
           </div>
@@ -31,9 +31,10 @@
             <div class="md-box__content g-shadow g-content">
               <div class="md-box__content__text">
                 <p class="g-label">總通話時間</p>
-                <p class="s-text">23小時19分鐘</p>
+                <p class="s-text" x-text="totalCall">23小時19分鐘</p>
               </div>
-              <img class="md-box__img" src="https://fakeimg.pl/50x50/ccc" />
+              <img class="md-box__img" src="../assets/icons/phone.svg" />
+
             </div>
           </div>
         </div>
@@ -55,7 +56,7 @@
           </div>
 
 
-          <p class="g-label">個別使用者統計</p>
+          <p class="g-label">個別使用者訊息統計</p>
           <div class="tcd-separate-chart">
             <div class="tcd-separate-chart__content">
               <div class="tcd-sc-box">
@@ -77,21 +78,24 @@
 
       <!-- 平均訊息（訊息、檔案、圖片...等）統計與個別使用者統計 -->
       <div class="average-chat-data  g-section">
-        <div class="average-chat-data__content g-content">
+        <div class="average-chat-data__content">
           <div class="acd-box">
             <div class="acd-box__content g-content g-shadow">
               <p class="g-label">聊天頻率</p>
+              <p>平均 3 天一次</p>
             </div>
           </div>
 
           <div class="acd-box">
             <div class="acd-box__content g-content g-shadow">
               <p class="g-label">每日聊天平均筆數</p>
+              <p>234 筆</p>
             </div>
           </div>
           <div class="acd-box">
             <div class="acd-box__content g-content g-shadow">
-              <p class="g-label">每日訊息數</p>
+              <p class="g-label">每日平均回覆時間</p>
+              <p>32 分 3 秒</p>
             </div>
           </div>
         </div>
@@ -111,7 +115,93 @@
           </div>
 
         </div>
+      </div>
 
+      <!-- 每日訊息圖 -->
+      <div class="daily-chat-data g-shadow g-section">
+        <div class="daily-chat-data__content g-content">
+          <p class="g-label">每日訊息</p>
+          <div class="dcd-all-chart">
+            <div class="dcd-all-chart__content">
+              <div class=dcd-all-chart__content__label>
+              </div>
+              <div class=dcd-all-chart__content__chart>
+                chart
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 總通訊統計與個別使用者統計 -->
+      <div class="total-phone-data g-shadow g-section">
+        <div class="total-phone-data__content g-content">
+          <p class="g-label">通話統計</p>
+          <div class="tpd-all-chart">
+            <div class="tpd-all-chart__content">
+              <div class=tpd-all-chart__content__label>
+              </div>
+              <div class=tpd-all-chart__content__chart>
+                chart
+              </div>
+
+            </div>
+          </div>
+
+
+          <p class="g-label">個別使用者通話統計</p>
+          <div class="tpd-separate-chart">
+            <div class="tpd-separate-chart__content">
+              <div class="tpd-sc-box">
+                <p class="g-label">user1</p>
+                <div class="tpd-sc-box">chart</div>
+              </div>
+              <div class="tpd-sc-box">
+                <p class="g-label">user2</p>
+                <div class="tpd-sc-box">chart</div>
+              </div>
+              <div class="tpd-sc-box">
+                <p class="g-label">user3</p>
+                <div class="tpd-sc-box">chart</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 平均通話頻率等統計與個別使用者統計 -->
+      <div class="average-phone-data  g-section">
+        <div class="average-phone-data__content">
+          <div class="apd-box">
+            <div class="apd-box__content g-content g-shadow">
+              <p class="g-label">通話頻率</p>
+              <p>平均 3 天一次</p>
+            </div>
+          </div>
+
+          <div class="apd-box">
+            <div class="apd-box__content g-content g-shadow">
+              <p class="g-label">每次通話平均</p>
+              <p>234 筆</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 每日通話圖 -->
+      <div class="daily-phone-data g-shadow g-section">
+        <div class="daily-phone-data__content g-content">
+          <p class="g-label">每日通話圖</p>
+          <div class="dpd-all-chart">
+            <div class="dpd-all-chart__content">
+              <div class=dpd-all-chart__content__label>
+              </div>
+              <div class=dpd-all-chart__content__chart>
+                chart
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
