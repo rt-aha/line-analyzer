@@ -67,9 +67,11 @@
 }
 
 .tcd-sc-box {
-  flex: 50%;
+  flex: none;
+  width: 50%;
 
   &__chart {
+    width: 100%;
   }
 }
 

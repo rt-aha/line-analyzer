@@ -49,7 +49,7 @@
               <div class=tcd-all-chart__content__label>
               </div>
               <div class=tcd-all-chart__content__chart>
-                chart
+                <div id="tcd-container"></div>
               </div>
 
             </div>
@@ -58,44 +58,44 @@
 
           <p class="g-label">個別使用者訊息統計</p>
           <div class="tcd-separate-chart">
-            <div class="tcd-separate-chart__content">
-              <div class="tcd-sc-box">
+            <div class="tcd-separate-chart__content" id="tcdSeperateChartContent">
+              <!-- <div class="tcd-sc-box">
                 <p class="g-label">user1</p>
-                <div class="tcd-sc-box">chart</div>
+                <div class="tcd-sc-box__chart">chart</div>
               </div>
               <div class="tcd-sc-box">
                 <p class="g-label">user2</p>
-                <div class="tcd-sc-box">chart</div>
-              </div>
-              <div class="tcd-sc-box">
+                <div class="tcd-sc-box__chart">chart</div>
+              </div> -->
+              <!-- <div class="tcd-sc-box">
                 <p class="g-label">user3</p>
                 <div class="tcd-sc-box">chart</div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
 
       <!-- 平均訊息（訊息、檔案、圖片...等）統計與個別使用者統計 -->
-      <div class="average-chat-data  g-section">
+      <div class="average-chat-data  g-section" x-data="averageChatData">
         <div class="average-chat-data__content">
           <div class="acd-box">
             <div class="acd-box__content g-content g-shadow">
               <p class="g-label">聊天頻率</p>
-              <p>平均 3 天一次</p>
+              <p x-text="chatDays">平均 3 天一次</p>
             </div>
           </div>
 
           <div class="acd-box">
             <div class="acd-box__content g-content g-shadow">
               <p class="g-label">每日聊天平均筆數</p>
-              <p>234 筆</p>
+              <p x-text="message">234 筆</p>
             </div>
           </div>
           <div class="acd-box">
             <div class="acd-box__content g-content g-shadow">
               <p class="g-label">每日平均回覆時間</p>
-              <p>32 分 3 秒</p>
+              <p x-text="replyFrquencyInMinutes">32 分 3 秒</p>
             </div>
           </div>
         </div>
