@@ -8,6 +8,7 @@ import genPieChart from '@/js/chart/genPieChart.js';
 import genPieChartData from '@/js/utils/genPieChartData.js';
 import calcMinSec from '@/js/utils/calcMinSec';
 import lineData from '@/testData/test1.js';
+import '@/js/utils/upload.js';
 
 const { userStatistics, totalStatistics, averageStatistics } = lineData;
 

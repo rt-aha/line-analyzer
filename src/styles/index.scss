@@ -5,8 +5,24 @@
 .ly {
   &__content {
     margin: 50px auto 100px;
+    width: 90%;
     max-width: 960px;
   }
+}
+
+.upload-chat-file-btn {
+  width: 120px;
+  height: 32px;
+  border-radius: 6px;
+  border: 0 transparent;
+  outline: 0 transparent;
+  background-color: $c-main;
+  color: $c-white;
+  text-align: center;
+}
+
+.upload-input {
+  display: none;
 }
 
 .main-title {
