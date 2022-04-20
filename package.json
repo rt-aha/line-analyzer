@@ -47,5 +47,8 @@
   },
   "dependencies": {
     "alpinejs": "^3.9.6"
+  },
+  "engines": {
+    "node": "14.18.1"
   }
 }
