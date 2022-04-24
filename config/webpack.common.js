@@ -6,7 +6,7 @@ const WebpackBar = require('webpackbar');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { errorLog,importantLog } = require('./utils');
+const { errorLog, importantLog } = require('./utils');
 
 const getEntry = () => {
   const entry = {};
@@ -100,7 +100,7 @@ const config = {
       filename: './styles/[name].css', // css ouput到dist資料夾的位置
       chunkFilename: '[id].css',
     }),
-    new WebpackBar()
+    new WebpackBar(),
   ],
   resolve: {
     alias: {
@@ -108,10 +108,9 @@ const config = {
     },
   },
   stats: {
-    excludeModules: "mini-css-extract-plugin"
+    excludeModules: 'mini-css-extract-plugin',
   },
 };
-
 
 fileList.forEach((name) => {
   config.plugins.push(
@@ -122,7 +121,6 @@ fileList.forEach((name) => {
       minify: {
         removeComments: true,
         collapseWhitespace: true, // 壓縮 HTML
-        removeAttributeQuotes: true,
       },
     }),
   );
