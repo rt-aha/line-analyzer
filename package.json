@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "alpinejs": "^3.9.6",
+    "axios": "^0.26.1",
     "highcharts": "^10.0.0",
     "uuid": "^8.3.2"
   },
